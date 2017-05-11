@@ -1,6 +1,6 @@
 {
-  "name": "protobufjs",
-  "version": "5.0.2",
+  "name": "protobufjs5-fixpackedfields",
+  "version": "1.0.0",
   "description": "Protocol Buffers for JavaScript. Finally.",
   "author": "Daniel Wirtz <dcode@dcode.io>",
   "contributors": [
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dcodeIO/protobuf.js.git"
+    "url": "https://github.com/noveyak/protobuf.js.git"
   },
   "bugs": {
-    "url": "https://github.com/dcodeIO/protobuf.js/issues"
+    "url": "https://github.com/noveyak/protobuf.js/issues"
   },
-  "homepage": "https://github.com/dcodeIO/protobuf.js",
+  "homepage": "https://github.com/noveyak/protobuf.js",
   "keywords": [
     "net",
     "buffer",
