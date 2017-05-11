@@ -1,9 +1,10 @@
 {
-  "name": "protobufjs5-fixpackedfields",
+  "name": "c3d-protobufjs5",
   "version": "1.0.0",
   "description": "Protocol Buffers for JavaScript. Finally.",
-  "author": "Daniel Wirtz <dcode@dcode.io>",
+  "author": "Brian Li <noveyak@gmail.com>",
   "contributors": [
+    "Daniel Wirtz <dcode@dcode.io>",
     "Frank Xu <yyfrankyy@gmail.com>"
   ],
   "main": "./dist/protobuf.js",
