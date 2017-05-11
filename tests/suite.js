@@ -263,14 +263,14 @@
             test.deepEqual(t2, t3);
             test.done();
         },
-        
+
         "constructorWithOneofs": function(test) {
             try {
                 var builder = ProtoBuf.loadProtoFile(__dirname+"/oneof.proto"),
                     MyOneOf = builder.build("MyOneOf"),
                     TOneOf = builder.lookup(".MyOneOf");
                 test.ok(TOneOf.getChild("my_oneof"));
-                
+
                 var myOneOf = new MyOneOf();
                 test.strictEqual(myOneOf.my_oneof, null);
                 myOneOf.set("id", 1);
@@ -278,12 +278,12 @@
                 myOneOf.set("name", "me");
                 test.strictEqual(myOneOf.my_oneof, "name");
                 test.strictEqual(myOneOf.id, null);
-                
+
                 var copy = new MyOneOf(myOneOf); // this line is what was failing
                 // Error: .MyOneOf#my_oneof is not a field: undefined
-                
+
                 test.deepEqual(myOneOf, copy);
-                
+
                 // Test same things are there
                 test.strictEqual(copy.my_oneof, "name");
                 test.strictEqual(copy.name, "me");
@@ -1670,7 +1670,7 @@
                 // 10: wt 0, id 2
                 // 01: 1
                 var outer2 = root.Outer.decode(bb);
-                test.strictEqual(outer2.inner.id, 1);
+                test.strictEqual(outer2.inner[0].id, 1);
             } catch (e) {
                 fail(e);
             }

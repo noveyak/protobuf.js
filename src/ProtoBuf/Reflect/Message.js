@@ -253,7 +253,8 @@ MessagePrototype.decode = function(buffer, length, expectedGroupEndId) {
             }
             continue;
         }
-        if (field.repeated && !field.options["packed"]) {
+        var isPackedField = wireType == ProtoBuf.WIRE_TYPES.LDELIM  && ProtoBuf.PACKABLE_WIRE_TYPES.indexOf(field.type.wireType) >= 0;
+        if (field.repeated  && !isPackedField) {
             msg[field.name].push(field.decode(wireType, buffer));
         } else if (field.map) {
             var keyval = field.decode(wireType, buffer);

@@ -409,7 +409,7 @@ FieldPrototype.decode = function(wireType, buffer, skipRepeated) {
         throw Error("Illegal wire type for field "+this.toString(true)+": "+wireType+" ("+this.type.wireType+" expected)");
 
     // Handle packed repeated fields.
-    if (wireType == ProtoBuf.WIRE_TYPES.LDELIM && this.repeated && this.options["packed"] && ProtoBuf.PACKABLE_WIRE_TYPES.indexOf(this.type.wireType) >= 0) {
+    if (wireType == ProtoBuf.WIRE_TYPES.LDELIM && this.repeated && ProtoBuf.PACKABLE_WIRE_TYPES.indexOf(this.type.wireType) >= 0) {
         if (!skipRepeated) {
             nBytes = buffer.readVarint32();
             nBytes = buffer.offset + nBytes; // Limit
